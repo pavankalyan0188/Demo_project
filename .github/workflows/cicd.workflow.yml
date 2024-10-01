@@ -39,6 +39,7 @@ jobs:
           # push it to ECR so that it can
           # be deployed to ECS.
           docker build -t java-code-with-maven .
+          docker tag java-code-with-maven:latest 841515711664.dkr.ecr.ap-south-1.amazonaws.com/java-code-with-maven:latest
           docker push 841515711664.dkr.ecr.ap-south-1.amazonaws.com/java-code-with-maven:latestw
           echo "image=$ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT     
           
